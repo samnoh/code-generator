@@ -1,0 +1,23 @@
+{
+    "name": "code-generator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/samnoh/code-generator.git"
+    },
+    "keywords": [],
+    "author": "Sam Noh <samnoh.dev@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/samnoh/code-generator/issues"
+    },
+    "homepage": "https://github.com/samnoh/code-generator#readme",
+    "config": {
+        "codeGenerator": {}
+    }
+}
