@@ -18,6 +18,11 @@
     },
     "homepage": "https://github.com/samnoh/code-generator#readme",
     "config": {
-        "codeGenerator": {}
+        "code-generator": {
+            "modules": {
+                "styled": "styled-components",
+                "{ Link }": "react-router-dom"
+            }
+        }
     }
 }
