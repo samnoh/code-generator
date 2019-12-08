@@ -4,12 +4,14 @@ const currentPath = process.cwd();
 const templatesDirectory = path.join(__dirname, '..', 'templates');
 const directories = {
     react: {
-        template: path.join(templatesDirectory, 'react', 'FuncComp.js'),
-        ext: 'js'
+        ext: 'js',
+        functional: path.join(templatesDirectory, 'react', 'FuncComp.js'),
+        class: path.join(templatesDirectory, 'react', 'ClassComp.js')
     },
-    ts: {
-        template: path.join(templatesDirectory, 'react', 'FuncComp.js'),
-        ext: 'ts'
+    typescript: {
+        ext: 'ts',
+        functional: path.join(templatesDirectory, 'typescript', 'FuncComp.js'),
+        class: path.join(templatesDirectory, 'typescript', 'ClassComp.js')
     }
 };
 const config = require(currentPath + '/package.json').config['code-generator'];

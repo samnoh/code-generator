@@ -9,7 +9,7 @@ program
     .option(
         '-n, --name [name]',
         'Defines the name of component you would like to generate',
-        'Component'
+        config.defaultName ? config.defaultName : 'Component'
     )
     .option(
         '-o, --outDir [directory]',

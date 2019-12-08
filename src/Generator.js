@@ -8,11 +8,12 @@ class Generator {
         this.name = params.name;
         this.outDir = params.outDir;
         this.kind = params.typescript ? 'ts' : 'react';
+        this.type = params.class ? 'class' : 'functional';
         this.createTemplate();
     }
 
     createTemplate() {
-        fs.readFile(directories[this.kind].template, 'utf8', (error, data) => {
+        fs.readFile(directories[this.kind][this.type], 'utf8', (error, data) => {
             if (error) throw error;
 
             data = data.replace(/TEMPLATE_NAME/g, this.name);
@@ -24,7 +25,12 @@ class Generator {
             data = data.replace(/MODULES/, modules);
 
             fs.writeFile(
-                path.join(currentPath, this.outDir, `${this.name}.${directories[this.kind].ext}`),
+                path.join(
+                    currentPath,
+                    config.baseDir ? config.baseDir : '',
+                    this.outDir,
+                    `${this.name}.${directories[this.kind].ext}`
+                ),
                 data,
                 error => {
                     if (error) throw error;
