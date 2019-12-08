@@ -10,8 +10,8 @@ const directories = {
     },
     typescript: {
         ext: 'ts',
-        functional: path.join(templatesDirectory, 'typescript', 'FuncComp.js'),
-        class: path.join(templatesDirectory, 'typescript', 'ClassComp.js')
+        functional: path.join(templatesDirectory, 'typescript', 'FuncComp.ts'),
+        class: path.join(templatesDirectory, 'typescript', 'ClassComp.ts')
     }
 };
 const config = require(currentPath + '/package.json').config['code-generator'];
