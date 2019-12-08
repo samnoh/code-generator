@@ -1,7 +1,7 @@
 # React Code Generator
 
 <div align="center">
-<img src="https://img.shields.io/npm/v/%40samnoh%2Freact-gen"> <img src="https://img.shields.io/npm/l/%40samnoh%2Freact-gen">
+<a href="https://www.npmjs.com/package/@samnoh/react-gen"><img src="https://img.shields.io/npm/v/%40samnoh%2Freact-gen"></a> <a href="https://github.com/samnoh/react-code-generator/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/%40samnoh%2Freact-gen"></a>
 </div>
 
 ## Install
