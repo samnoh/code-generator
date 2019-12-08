@@ -15,7 +15,7 @@ const directories = {
     }
 };
 const packageConfig = require(currentPath + '/package.json').config || {};
-const config = packageConfig.codegen || {};
+const config = packageConfig.reactgen || {};
 
 module.exports = {
     currentPath,

@@ -11,13 +11,13 @@ npm install -g @samnoh/react-gen
 -   Create a class-based 'Button' component in the '/src' directory
 
 ```bash
-codegen -o /src -n Button -c
+reactgen -o /src -n Button -c
 ```
 
 -   Create a functional 'AuthTemplate' typescript component in the default directory
 
 ```bash
-codegen -n AuthTemplate -t
+reactgen -n AuthTemplate -t
 ```
 
 ## Config
@@ -26,7 +26,7 @@ codegen -n AuthTemplate -t
 
 ```json
 "config": {
-    "codegen": {
+    "reactgen": {
         "defaultName": "Component",
         "baseDir": "/src/components",
         "modules": {
