@@ -15,7 +15,7 @@ const defaultProps = {
 
 class TEMPLATE_NAME extends Component<Props, State> {
     static defaultProps = defaultProps
-    staet = initialState
+    state = initialState
 
     componentDidMount() {
 
