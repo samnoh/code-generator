@@ -19,10 +19,16 @@
     "homepage": "https://github.com/samnoh/code-generator#readme",
     "config": {
         "code-generator": {
+            "baseDir": "/src",
             "modules": {
                 "styled": "styled-components",
                 "{ Link }": "react-router-dom"
-            }
+            },
+            "typescript": false,
+            "classBased": false
         }
+    },
+    "dependencies": {
+        "commander": "4.0.1"
     }
 }
