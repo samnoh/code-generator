@@ -8,13 +8,13 @@ npm install -g @samnoh/react-gen
 
 ## Usage
 
--   Create a class-based 'Button' component in /src directory
+-   Create a class-based 'Button' component in the '/src' directory
 
 ```bash
 codegen -o /src -n Button -c
 ```
 
--   Create a functional 'AuthTemplate' typescript component in default directory
+-   Create a functional 'AuthTemplate' typescript component in the default directory
 
 ```bash
 codegen -n AuthTemplate -t
@@ -22,7 +22,7 @@ codegen -n AuthTemplate -t
 
 ## Config
 
--   package.json -> config -> codegen
+-   You can set default values in `package.json`
 
 ```json
 "config": {
