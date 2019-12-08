@@ -1,5 +1,8 @@
 # React Code Generator
 
+<img src="https://img.shields.io/npm/v/%40samnoh%2Freact-gen">
+<img src="https://img.shields.io/npm/l/%40samnoh%2Freact-gen">
+
 ## Install
 
 ```bash
