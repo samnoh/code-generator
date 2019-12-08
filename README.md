@@ -1,5 +1,11 @@
 # React Code Generator
 
+## Install
+
+```bash
+npm install -g @samnoh/react-gen
+```
+
 ## Usage
 
 -   Create a class-based 'Button' component in /src directory
@@ -19,16 +25,16 @@ codegen -n AuthTemplate -t
 -   package.json -> config -> codegen
 
 ```json
-    "config": {
-        "codegen": {
-            "defaultName": "Component",
-            "baseDir": "/src/components",
-            "modules": {
-                "styled": "styled-components",
-                "{ Link }": "react-router-dom"
-            },
-            "typescript": false,
-            "classBased": false
-        }
+"config": {
+    "codegen": {
+        "defaultName": "Component",
+        "baseDir": "/src/components",
+        "modules": {
+            "styled": "styled-components",
+            "{ Link }": "react-router-dom"
+        },
+        "typescript": false,
+        "classBased": false
     }
+}
 ```

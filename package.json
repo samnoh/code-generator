@@ -1,7 +1,7 @@
 {
-    "name": "code-generator",
+    "name": "@samnoh/react-gen",
     "version": "1.0.0",
-    "description": "",
+    "description": "React component generator",
     "main": "index.js",
     "scripts": {
         "start": "node index.js"
@@ -10,7 +10,11 @@
         "type": "git",
         "url": "git+https://github.com/samnoh/code-generator.git"
     },
-    "keywords": [],
+    "keywords": [
+        "react",
+        "typescript",
+        "code generator"
+    ],
     "author": "Sam Noh <samnoh.dev@gmail.com>",
     "license": "MIT",
     "bugs": {
