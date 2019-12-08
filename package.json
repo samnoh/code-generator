@@ -22,9 +22,8 @@
     },
     "homepage": "https://github.com/samnoh/code-generator#readme",
     "config": {
-        "codegen": {
+        "reactgen": {
             "defaultName": "Component",
-            "baseDir": "/build",
             "modules": {
                 "styled": "styled-components",
                 "{ Link }": "react-router-dom"

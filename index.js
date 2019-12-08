@@ -11,11 +11,7 @@ program
         'Defines the name of component you would like to generate',
         config.defaultName || 'Component'
     )
-    .option(
-        '-o, --outDir [directory]',
-        'Defines rlative directory where it generates files',
-        config.baseDir || '/'
-    )
+    .option('-o, --outDir [directory]', 'Defines rlative directory where it generates files', '/')
     .option(
         '-t, --typescript',
         'If you would like to generate typescript files',
