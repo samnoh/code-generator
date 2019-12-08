@@ -21,17 +21,6 @@ class Generator {
         this.createTemplate();
     }
 
-    async createTemplate() {
-        try {
-            let data = await this.file.content;
-            data = this.replaceName(data);
-            data = this.replaceModules(data);
-            this.file.content = data;
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
     replaceName(data) {
         return data.replace(/TEMPLATE_NAME/g, this.name);
     }
@@ -42,6 +31,17 @@ class Generator {
             modules += `import ${key} from ${config.modules[key]};\n`;
         }
         return data.replace(/MODULES/, modules);
+    }
+
+    async createTemplate() {
+        try {
+            let data = await this.file.content;
+            data = this.replaceName(data);
+            data = this.replaceModules(data);
+            this.file.content = data;
+        } catch (error) {
+            console.error(error);
+        }
     }
 }
 
