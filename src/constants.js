@@ -14,7 +14,7 @@ const directories = {
         class: path.join(templatesDirectory, 'typescript', 'ClassComp.ts')
     }
 };
-const config = require(currentPath + '/package.json').config['code-generator'];
+const config = require(currentPath + '/package.json').config.codegen;
 
 module.exports = {
     currentPath,

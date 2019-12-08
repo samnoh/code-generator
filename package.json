@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/samnoh/code-generator#readme",
     "config": {
-        "code-generator": {
+        "codegen": {
             "defaultName": "Component",
             "baseDir": "/build",
             "modules": {
@@ -31,5 +31,8 @@
     },
     "dependencies": {
         "commander": "4.0.1"
+    },
+    "bin": {
+        "codegen": "index.js"
     }
 }
