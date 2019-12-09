@@ -27,7 +27,7 @@ reactgen -n AuthTemplate -t
 -   Create a functional 'NavBar' jsx component in the default directory using your own template, `Template.js`
 
 ```bash
-reactgen -T ./Template.js -n NavBar
+reactgen -T Template.js -n NavBar
 ```
 
 ## Config
@@ -51,4 +51,44 @@ reactgen -T ./Template.js -n NavBar
         }
     }
 }
+```
+
+## Your own template
+
+-   `TEMPLATE_NAME` and `MODULES` are preset template variable
+
+```js
+MODULES
+const  = LAZY
+const  = LAZY
+
+const TEMPLATE_NAME = () => {
+    CONSOLE
+
+    return <div>Hello</div>;
+};
+
+export default TEMPLATE_NAME;
+```
+
+```bash
+reactgen -n Hello -T /templates/test.js -o /Components
+```
+
+- Result
+
+```js
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+const  = React.lazy(() => import(''));
+const  = React.lazy(() => import(''));
+
+const TEMPLATE_NAME = () => {
+    console.log('hello world');
+
+    return <div>Hello</div>;
+};
+
+export default TEMPLATE_NAME;
 ```
