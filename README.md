@@ -39,6 +39,7 @@ reactgen -T Template.js -n NavBar
 "config": {
     "reactgen": {
         "defaultName": "Component",
+        "baseDir": "src",
         "modules": {
             "styled": "styled-components",
             "{ Link }": "react-router-dom"
@@ -75,7 +76,7 @@ export default TEMPLATE_NAME;
 ```
 
 ```bash
-reactgen -n SideBar -T /templates/test.js -o /Components
+reactgen -n SideBar -T /templates/test.js -o /components
 ```
 
 -   Result

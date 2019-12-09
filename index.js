@@ -2,7 +2,7 @@
 
 const program = require('commander');
 
-const Generator = require('./src/Generator');
+const createTemplate = require('./src/Generator');
 const { config } = require('./src/constants');
 
 program
@@ -22,11 +22,11 @@ program
         config.typescript || false
     )
     .option(
-        '-c, --class',
+        '-c, --classBased',
         'If you would like to generate a class-based component',
         config.classBased || false
     )
     .option('-T, --template [directory]', 'If you would like to use your own template ', null)
     .parse(process.argv);
 
-new Generator(program);
+createTemplate(program);

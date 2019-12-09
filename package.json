@@ -24,6 +24,7 @@
     "config": {
         "reactgen": {
             "defaultName": "Component",
+            "baseDir": "build",
             "modules": {
                 "styled": "styled-components",
                 "{ Link }": "react-router-dom"

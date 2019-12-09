@@ -4,14 +4,14 @@ const File = require('./File');
 const { currentPath, directories, config } = require('./constants');
 
 class Generator {
-    constructor(params) {
-        this.name = params.name;
-        this.outDir = params.outDir;
-        this.kind = params.typescript ? 'typescript' : 'react';
-        this.type = params.class ? 'class' : 'functional';
-        this.template = !!params.template;
+    constructor({ name, outDir, typescript, classBased, template }) {
+        this.name = name;
+        this.outDir = outDir;
+        this.kind = typescript ? 'typescript' : 'react';
+        this.type = classBased ? 'class' : 'functional';
+        this.template = !!template;
         this.file = new File(
-            params.template || directories[this.kind][this.type],
+            template || directories[this.kind][this.type],
             path.join(
                 currentPath,
                 config.baseDir ? config.baseDir : '',
@@ -19,42 +19,39 @@ class Generator {
                 `${this.name}.${directories[this.kind].ext}`
             )
         );
-        this.createTemplate();
     }
 
-    replaceName(data) {
-        return data.replace(/TEMPLATE_NAME/g, this.name);
-    }
-
-    replaceModules(data) {
+    replaceDefaultVariables() {
+        // name and modules
         let modules = '';
         for (const key in config.modules) {
             modules += `import ${key} from ${config.modules[key]};\n`;
         }
-
-        return data.replace(/MODULES/, modules.slice(0, -1)); // remove last \n
+        this.data = this.data
+            .replace(/MODULES/, modules.slice(0, -1)) // remove last \n
+            .replace(/TEMPLATE_NAME/g, this.name);
     }
 
-    replaceOwnVariables(data) {
-        if (!this.template) return data;
+    replaceTemplateVariables() {
+        if (!this.template) return;
 
         for (const key in config.template) {
-            data = data.replace(new RegExp(key, 'g'), config.template[key]);
+            this.data = this.data.replace(new RegExp(key, 'g'), config.template[key]);
         }
-        return data;
     }
 
-    async createTemplate() {
+    static async createTemplate(params) {
+        const gen = new Generator(params);
+
         try {
-            let data = await this.file.read();
-            data = this.replaceName(data);
-            data = this.replaceModules(data);
-            data = this.replaceOwnVariables(data);
-            await this.file.write(data);
+            gen.data = await gen.file.read();
+            gen.replaceDefaultVariables();
+            gen.replaceTemplateVariables();
+            await gen.file.write(gen.data);
         } catch (error) {
             console.error(error);
         }
     }
 }
 
-module.exports = Generator;
+module.exports = Generator.createTemplate;
