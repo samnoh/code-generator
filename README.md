@@ -47,7 +47,7 @@ reactgen -T Template.js -n NavBar
         "classBased": false,
         "template": {
             "LAZY": "React.lazy(() => import(''));",
-            "CONSOLE": "console.log('hello world');"
+            "USEEFFECT": "useEffect(() => {}, []);"
         }
     }
 }
@@ -58,6 +58,7 @@ reactgen -T Template.js -n NavBar
 -   `TEMPLATE_NAME` and `MODULES` are preset template variables
 
 ```js
+import React, { useEffect } from 'react';
 MODULES
 const  = LAZY
 const  = LAZY
@@ -78,6 +79,7 @@ reactgen -n SideBar -T /templates/test.js -o /Components
 -   Result
 
 ```js
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -85,7 +87,7 @@ const  = React.lazy(() => import(''));
 const  = React.lazy(() => import(''));
 
 const SideBar = () => {
-    console.log('hello world');
+    useEffect(() => {}, []);
 
     return <div>Hello</div>;
 };
