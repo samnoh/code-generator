@@ -26,6 +26,7 @@ program
         'If you would like to generate a class-based component',
         config.classBased || false
     )
+    .option('-T, --template [directory]', 'If you would like to use your own template ', null)
     .parse(process.argv);
 
 new Generator(program);

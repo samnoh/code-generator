@@ -29,7 +29,11 @@
                 "{ Link }": "react-router-dom"
             },
             "typescript": false,
-            "classBased": false
+            "classBased": false,
+            "template": {
+                "LAZY": "React.lazy(() => import(''));",
+                "CONSOLE": "console.log('hello world');"
+            }
         }
     },
     "dependencies": {

@@ -12,33 +12,43 @@ npm install -g @samnoh/react-gen
 
 ## Usage
 
--   Create a class-based 'Button' component in the '/src' directory
+-   Create a class-based 'Button' jsx component in the '/src' directory
 
 ```bash
 reactgen -o /src -n Button -c
 ```
 
--   Create a functional 'AuthTemplate' typescript component in the default directory
+-   Create a functional 'AuthTemplate' tsx component in the default directory
 
 ```bash
 reactgen -n AuthTemplate -t
 ```
 
+-   Create a functional 'NavBar' jsx component in the default directory using your own template
+
+```bash
+reactgen -T NavBar
+```
+
 ## Config
 
 -   You can set default values in `package.json`
+    -   `template` configuration is used to set your own template variables
 
 ```json
 "config": {
     "reactgen": {
         "defaultName": "Component",
-        "baseDir": "/src/components",
         "modules": {
             "styled": "styled-components",
             "{ Link }": "react-router-dom"
         },
         "typescript": false,
-        "classBased": false
+        "classBased": false,
+        "template": {
+            "LAZY": "React.lazy(() => import(''));",
+            "CONSOLE": "console.log('hello world');"
+        }
     }
 }
 ```
