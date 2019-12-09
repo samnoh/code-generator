@@ -72,7 +72,7 @@ export default TEMPLATE_NAME;
 ```
 
 ```bash
-reactgen -n Hello -T /templates/test.js -o /Components
+reactgen -n SideBar -T /templates/test.js -o /Components
 ```
 
 - Result
@@ -84,11 +84,11 @@ import { Link } from 'react-router-dom';
 const  = React.lazy(() => import(''));
 const  = React.lazy(() => import(''));
 
-const TEMPLATE_NAME = () => {
+const SideBar = () => {
     console.log('hello world');
 
     return <div>Hello</div>;
 };
 
-export default TEMPLATE_NAME;
+export default SideBar;
 ```
