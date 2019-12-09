@@ -59,6 +59,7 @@ reactgen -T Template.js -n NavBar
 
 ```js
 import React, { useEffect } from 'react';
+import PageTemplate from 'components/PageTemplate';
 MODULES
 const  = LAZY
 const  = LAZY
@@ -66,7 +67,7 @@ const  = LAZY
 const TEMPLATE_NAME = () => {
     USEEFFECT
 
-    return <div>Hello</div>;
+    return <PageTemplate></PageTemplate>;
 };
 
 export default TEMPLATE_NAME;
@@ -80,6 +81,7 @@ reactgen -n SideBar -T /templates/test.js -o /Components
 
 ```js
 import React, { useEffect } from 'react';
+import PageTemplate from 'components/PageTemplate';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -89,7 +91,7 @@ const  = React.lazy(() => import(''));
 const SideBar = () => {
     useEffect(() => {}, []);
 
-    return <div>Hello</div>;
+    return <PageTemplate></PageTemplate>;
 };
 
 export default SideBar;
