@@ -24,10 +24,10 @@ reactgen -o /src -n Button -c
 reactgen -n AuthTemplate -t
 ```
 
--   Create a functional 'NavBar' jsx component in the default directory using your own template
+-   Create a functional 'NavBar' jsx component in the default directory using your own template, `Template.js`
 
 ```bash
-reactgen -T NavBar
+reactgen -T ./Template.js -n NavBar
 ```
 
 ## Config
