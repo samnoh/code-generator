@@ -64,7 +64,7 @@ const  = LAZY
 const  = LAZY
 
 const TEMPLATE_NAME = () => {
-    CONSOLE
+    USEEFFECT
 
     return <div>Hello</div>;
 };
