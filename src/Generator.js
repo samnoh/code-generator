@@ -40,14 +40,14 @@ class Generator {
         }
     }
 
-    static async createTemplate(params) {
+    static createTemplate(params) {
         const gen = new Generator(params);
 
         try {
-            gen.data = await gen.file.read();
+            gen.data = gen.file.read();
             gen.replaceDefaultVariables();
             gen.replaceTemplateVariables();
-            await gen.file.write(gen.data);
+            gen.file.write(gen.data);
         } catch (error) {
             console.error(error);
         }
