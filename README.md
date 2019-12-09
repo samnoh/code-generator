@@ -55,7 +55,7 @@ reactgen -T Template.js -n NavBar
 
 ## Your own template
 
--   `TEMPLATE_NAME` and `MODULES` are preset template variable
+-   `TEMPLATE_NAME` and `MODULES` are preset template variables
 
 ```js
 MODULES
@@ -75,7 +75,7 @@ export default TEMPLATE_NAME;
 reactgen -n SideBar -T /templates/test.js -o /Components
 ```
 
-- Result
+-   Result
 
 ```js
 import styled from 'styled-components';
