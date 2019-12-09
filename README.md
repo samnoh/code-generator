@@ -61,6 +61,7 @@ reactgen -T Template.js -n NavBar
 import React, { useEffect } from 'react';
 import PageTemplate from 'components/PageTemplate';
 MODULES
+
 const  = LAZY
 const  = LAZY
 

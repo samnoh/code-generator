@@ -32,7 +32,7 @@
             "classBased": false,
             "template": {
                 "LAZY": "React.lazy(() => import(''));",
-                "CONSOLE": "console.log('hello world');"
+                "USEEFFECT": "useEffect(() => {}, []);"
             }
         }
     },

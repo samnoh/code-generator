@@ -32,7 +32,7 @@ class Generator {
             modules += `import ${key} from ${config.modules[key]};\n`;
         }
 
-        return data.replace(/MODULES/, modules);
+        return data.replace(/MODULES/, modules.slice(0, -1)); // remove last \n
     }
 
     replaceOwnVariables(data) {
@@ -46,11 +46,11 @@ class Generator {
 
     async createTemplate() {
         try {
-            let data = await this.file.content;
+            let data = await this.file.read();
             data = this.replaceName(data);
             data = this.replaceModules(data);
             data = this.replaceOwnVariables(data);
-            this.file.content = data;
+            await this.file.write(data);
         } catch (error) {
             console.error(error);
         }

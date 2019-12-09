@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 MODULES
+
 type State = typeof initialState
 type Props = {
 

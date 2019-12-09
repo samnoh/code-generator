@@ -6,7 +6,7 @@ class File {
         this.writeDir = writeDir;
     }
 
-    get content() {
+    read() {
         return new Promise((resolve, reject) => {
             fs.readFile(this.readDir, 'utf8', (error, data) => {
                 if (error) reject(error);
@@ -15,9 +15,12 @@ class File {
         });
     }
 
-    set content(data) {
-        fs.writeFile(this.writeDir, data, error => {
-            if (error) throw error;
+    write(data) {
+        return new Promise((resolve, reject) => {
+            fs.writeFile(this.writeDir, data, error => {
+                if (error) reject(error);
+                resolve();
+            });
         });
     }
 }
